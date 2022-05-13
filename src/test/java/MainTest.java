@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -5,7 +6,6 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
-
     @Test
     void multiplicationTableTest(){
         var multiplicationTable = new Main();
@@ -24,11 +24,10 @@ class MainTest {
         int[] testArray=copy.copyArray(array);
         assertEquals(Arrays.toString(array),Arrays.toString(testArray));
     }
-
     @Test//write a code which tries to deposit allowed amount
     void bankDeposit(){
         BankAccount myBank = new BankAccount();
-        double amount = 100;
+        double amount = 4000;
         myBank.deposit(amount);
         assertEquals(amount,myBank.getBalance());
     }
@@ -36,7 +35,7 @@ class MainTest {
     @Test//write a code which tries to deposit more than max limit (based on my true daily deposit)
     void bankDepositTooMuch(){
         BankAccount myBank = new BankAccount();
-        double amount = 999999999;
+        double amount = 5001;
         myBank.deposit(amount);
         assertNotEquals(amount,myBank.getBalance());
 
